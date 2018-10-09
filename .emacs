@@ -10,7 +10,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (yaml-mode smex paredit markdown-mode magit go-mode flx-ido fill-column-indicator cider)))
+    (yaml-mode smex paredit markdown-mode magit flx-ido fill-column-indicator cider)))
  '(send-mail-function (quote smtpmail-send-it))
  '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.googlemail.com")
@@ -42,6 +42,27 @@
              '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 (package-initialize)
+
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+(ensure-package-installed 'yaml-mode
+                          'smex
+                          'paredit
+                          'markdown-mode
+                          'magit
+                          'flx-ido
+                          'fill-column-indicator
+                          'cider)
 
 (require 'ido)
 (require 'flx-ido)
