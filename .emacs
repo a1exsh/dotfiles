@@ -6,11 +6,13 @@
  '(blink-cursor-mode nil)
  '(c-basic-offset 4)
  '(column-number-mode t)
+ '(font-use-system-font t)
  '(indent-tabs-mode nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (yaml-mode smex paredit markdown-mode magit flx-ido fill-column-indicator cider)))
+    (org-bullets xcscope projectile scala-mode yaml-mode smex paredit markdown-mode magit flx-ido fill-column-indicator cider)))
+ '(scala-indent:step 4)
  '(send-mail-function (quote smtpmail-send-it))
  '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.googlemail.com")
@@ -62,6 +64,7 @@ Return a list of installed packages or nil for every skipped package."
                           'magit
                           'flx-ido
                           'fill-column-indicator
+                          'org-bullets
                           'cider)
 
 (require 'ido)
@@ -115,6 +118,7 @@ Return a list of installed packages or nil for every skipped package."
              (put-clojure-indent 'facts 1))))
 
 (add-hook 'clojure-mode-hook #'paredit-mode)
+(add-hook 'cider-repl-mode   #'paredit-mode)
 
 (add-hook 'java-mode-hook
           (function
@@ -126,3 +130,13 @@ Return a list of installed packages or nil for every skipped package."
 (add-hook 'java-mode-hook #'paredit-mode)
 
 (add-hook 'prog-mode-hook #'fci-mode)
+
+(setq python-shell-interpreter "ipython3"
+      python-shell-interpreter-args "--simple-prompt -i")
+
+(require 'org-bullets)
+(put 'upcase-region 'disabled nil)
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
