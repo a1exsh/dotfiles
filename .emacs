@@ -12,6 +12,7 @@
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
  '(recentf-mode t)
+ '(shell-command-with-editor-mode t)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tool-bar-position (quote bottom))
