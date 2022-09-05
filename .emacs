@@ -58,7 +58,9 @@ Return a list of installed packages or nil for every skipped package."
          package)))
    packages))
 
-(ensure-package-installed 'use-package)
+(ensure-package-installed
+ 'use-package 'magit 'markdown-mode 'paredit 'xcscope 'yaml-mode 'ido 'smex
+ 'fill-column-indicator 'cider 'projectile)
 
 (eval-when-compile
   (require 'use-package))
@@ -73,7 +75,7 @@ Return a list of installed packages or nil for every skipped package."
   :config
   (ido-mode t)
   (ido-everywhere t)
-  (flx-ido-mode t)
+  ;; (flx-ido-mode t)
   ;; disable ido faces to see flx highlights:
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
@@ -93,7 +95,7 @@ Return a list of installed packages or nil for every skipped package."
 (setq-default fill-column 78)
 (use-package fill-column-indicator
   :config
-  (setq fci-rule-column 78)
+  ;; (setq fci-rule-column 78)
   (add-hook 'prog-mode-hook #'fci-mode))
 
 (use-package cider
