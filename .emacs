@@ -59,8 +59,8 @@ Return a list of installed packages or nil for every skipped package."
    packages))
 
 (ensure-package-installed
- 'use-package 'magit 'markdown-mode 'paredit 'xcscope 'yaml-mode 'ido 'smex
- 'fill-column-indicator 'cider 'projectile)
+ 'use-package 'magit 'markdown-mode 'paredit 'xcscope 'yaml-mode 'flx-ido
+ 'smex 'fill-column-indicator 'cider 'projectile)
 
 (eval-when-compile
   (require 'use-package))
@@ -71,11 +71,11 @@ Return a list of installed packages or nil for every skipped package."
 (use-package xcscope)
 (use-package yaml-mode)
 
-(use-package ido
+(use-package flx-ido
   :config
   (ido-mode t)
   (ido-everywhere t)
-  ;; (flx-ido-mode t)
+  (flx-ido-mode t)
   ;; disable ido faces to see flx highlights:
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
