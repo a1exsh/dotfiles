@@ -7,6 +7,7 @@
  '(c-basic-offset 4)
  '(column-number-mode t)
  '(doc-view-resolution 300)
+ '(explicit-bash-args '("-c" "EDITOR=emacsclient bash --noediting -i"))
  '(font-use-system-font t)
  '(indent-tabs-mode nil)
  '(markdown-command "markdown_py")
