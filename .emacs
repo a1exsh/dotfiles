@@ -106,6 +106,8 @@ Return a list of installed packages or nil for every skipped package."
     (add-hook 'cider-repl-mode #'paredit-mode)
     (add-hook 'clojure-mode-hook #'paredit-mode)))
 
+(add-hook 'c-mode-hook 'cscope-minor-mode)
+
 (add-hook 'c-mode-hook
 	  (function
 	   (lambda nil
@@ -117,6 +119,10 @@ Return a list of installed packages or nil for every skipped package."
 		   (c-set-offset 'case-label '+)
 		   (setq fill-column 79)
 		   (setq indent-tabs-mode t))))))
+
+(add-hook 'clojure-mode-hook    #'paredit-mode)
+(add-hook 'cider-repl-mode      #'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'paredit-mode)
 
 (add-hook 'java-mode-hook
           (function
