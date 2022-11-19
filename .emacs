@@ -47,7 +47,7 @@
 
 (package-initialize)
 
-(defun ensure-package-installed (&rest packages)
+(defun ensure-package-installed (packages)
   "Assure every package is installed, ask for installation if it’s not.
 Return a list of installed packages or nil for every skipped package."
   (mapcar
@@ -60,8 +60,18 @@ Return a list of installed packages or nil for every skipped package."
    packages))
 
 (ensure-package-installed
- 'use-package 'magit 'markdown-mode 'paredit 'xcscope 'yaml-mode 'flx-ido
- 'smex 'fill-column-indicator 'cider 'projectile)
+ '(cider
+   fill-column-indicator
+   flx-ido
+   magit
+   markdown-mode
+   org-re-reveal
+   paredit
+   projectile
+   smex
+   use-package
+   xcscope
+   yaml-mode))
 
 (eval-when-compile
   (require 'use-package))
