@@ -148,3 +148,5 @@ Return a list of installed packages or nil for every skipped package."
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
+
+(use-package org-re-reveal)
