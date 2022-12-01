@@ -113,7 +113,7 @@ Return a list of installed packages or nil for every skipped package."
   :config
   (setq cider-repl-display-help-banner nil)
   (when (fboundp 'paredit-mode)
-    (add-hook 'cider-repl-mode #'paredit-mode)
+    (add-hook 'cider-repl-mode-hook #'paredit-mode)
     (add-hook 'clojure-mode-hook #'paredit-mode)))
 
 (add-hook 'c-mode-hook 'cscope-minor-mode)
