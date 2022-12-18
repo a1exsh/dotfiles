@@ -6,26 +6,32 @@
  '(blink-cursor-mode nil)
  '(c-basic-offset 4)
  '(column-number-mode t)
+ '(custom-safe-themes
+   '("ad7643f68868f802b10bbdb2de64fdf668adb7e5728dfda7097b0db2fe36d832" default))
  '(doc-view-resolution 300)
  '(explicit-bash-args '("-c" "EDITOR=emacsclient bash --noediting -i"))
  '(font-use-system-font t)
  '(indent-tabs-mode nil)
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
+ '(package-selected-packages
+   '(underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
  '(recentf-mode t)
  '(shell-command-with-editor-mode t)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
- '(tool-bar-position (quote bottom))
+ '(tool-bar-position 'bottom)
  '(tooltip-mode nil)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(uniquify-buffer-name-style 'forward nil (uniquify))
  '(winner-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "PfEd" :family "Liberation Mono")))))
+ '(default ((t (:height 120 :family "Liberation Mono")))))
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (windmove-default-keybindings)
 
@@ -69,6 +75,7 @@ Return a list of installed packages or nil for every skipped package."
    paredit
    projectile
    smex
+   underwater-theme
    use-package
    xcscope
    yaml-mode))
