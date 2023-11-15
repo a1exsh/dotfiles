@@ -145,8 +145,11 @@ Return a list of installed packages or nil for every skipped package."
           (function
            (lambda nil
              (setq c-basic-offset 4)
-             (setq fill-column 99)
-             (setq indent-tabs-mode f))))
+             (setq fill-column 120)
+             (setq indent-tabs-mode nil)
+             (c-set-offset 'arglist-intro '++)
+             (c-set-offset 'arglist-cont-nonempty '++)
+             (c-set-offset 'statement-cont '++))))
 
 (setq python-shell-interpreter "ipython3"
       python-shell-interpreter-args "--simple-prompt -i")
