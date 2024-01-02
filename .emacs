@@ -9,9 +9,9 @@
  '(custom-safe-themes
    '("ad7643f68868f802b10bbdb2de64fdf668adb7e5728dfda7097b0db2fe36d832" default))
  '(doc-view-resolution 300)
- '(explicit-bash-args '("-c" "EDITOR=emacsclient bash --noediting -i"))
  '(font-use-system-font t)
  '(indent-tabs-mode nil)
+ '(ispell-dictionary nil)
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
  '(package-selected-packages
@@ -30,6 +30,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:height 120 :family "Liberation Mono")))))
+
+(server-start)
+(setenv "EDITOR" "emacsclient")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
@@ -144,8 +147,11 @@ Return a list of installed packages or nil for every skipped package."
           (function
            (lambda nil
              (setq c-basic-offset 4)
-             (setq fill-column 99)
-             (setq indent-tabs-mode f))))
+             (setq fill-column 120)
+             (setq indent-tabs-mode nil)
+             (c-set-offset 'arglist-intro '++)
+             (c-set-offset 'arglist-cont-nonempty '++)
+             (c-set-offset 'statement-cont '++))))
 
 (setq python-shell-interpreter "ipython3"
       python-shell-interpreter-args "--simple-prompt -i")
