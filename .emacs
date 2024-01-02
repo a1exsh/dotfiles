@@ -107,6 +107,8 @@ Return a list of installed packages or nil for every skipped package."
   :config
   (smex-initialize))
 
+(global-set-key (kbd "C-M-;") 'comment-indent)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
