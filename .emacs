@@ -10,12 +10,14 @@
    '("ad7643f68868f802b10bbdb2de64fdf668adb7e5728dfda7097b0db2fe36d832" default))
  '(doc-view-resolution 300)
  '(font-use-system-font t)
+ '(global-num3-mode t)
  '(indent-tabs-mode nil)
  '(ispell-dictionary nil)
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
  '(package-selected-packages
    '(underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
+   '(num3-mode underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
  '(recentf-mode t)
  '(shell-command-with-editor-mode t)
  '(show-paren-mode t)
@@ -29,7 +31,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 120 :family "Liberation Mono")))))
+ '(default ((t (:height 120 :family "Liberation Mono"))))
+ '(num3-face-even ((t (:underline t)))))
 
 (server-start)
 (setenv "EDITOR" "emacsclient")
@@ -74,6 +77,7 @@ Return a list of installed packages or nil for every skipped package."
    flx-ido
    magit
    markdown-mode
+   num3-mode
    org-re-reveal
    paredit
    projectile
