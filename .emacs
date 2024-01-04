@@ -16,7 +16,6 @@
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
    '(num3-mode underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
  '(recentf-mode t)
  '(shell-command-with-editor-mode t)
