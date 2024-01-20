@@ -10,6 +10,7 @@
    '("ad7643f68868f802b10bbdb2de64fdf668adb7e5728dfda7097b0db2fe36d832" default))
  '(doc-view-resolution 300)
  '(font-use-system-font t)
+ '(global-linum-mode t)
  '(global-num3-mode t)
  '(indent-tabs-mode nil)
  '(ispell-dictionary nil)
