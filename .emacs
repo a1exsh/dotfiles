@@ -90,6 +90,10 @@ Return a list of installed packages or nil for every skipped package."
 (eval-when-compile
   (require 'use-package))
 
+(use-package num3-mode
+  :config
+  (global-num3-mode t))
+
 (use-package magit)
 (use-package markdown-mode)
 (use-package paredit)
