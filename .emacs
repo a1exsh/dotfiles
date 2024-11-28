@@ -59,6 +59,15 @@
 
 (package-initialize)
 
+;;
+;; Problem:  Failed to verify signature archive-contents.sig:
+;;
+;; Solution: https://bugs-devel.debian.org/cgi-bin/bugreport.cgi?bug=1070664
+;;
+;; (let ((package-check-signature nil))
+;;   (package-refresh-contents)
+;;   (package-install 'gnu-elpa-keyring-update))
+;;
 (defun ensure-package-installed (packages)
   "Assure every package is installed, ask for installation if it’s not.
 Return a list of installed packages or nil for every skipped package."
