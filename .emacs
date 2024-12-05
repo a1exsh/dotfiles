@@ -17,7 +17,7 @@
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(num3-mode underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
+   '(flycheck-clj-kondo num3-mode underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
  '(recentf-mode t)
  '(shell-command-with-editor-mode t)
  '(show-paren-mode t)
@@ -82,6 +82,7 @@ Return a list of installed packages or nil for every skipped package."
 
 (ensure-package-installed
  '(cider
+   flycheck-clj-kondo
    fill-column-indicator
    flx-ido
    magit
@@ -144,6 +145,14 @@ Return a list of installed packages or nil for every skipped package."
   (when (fboundp 'paredit-mode)
     (add-hook 'cider-repl-mode-hook #'paredit-mode)
     (add-hook 'clojure-mode-hook #'paredit-mode)))
+
+(use-package flycheck-clj-kondo
+  :ensure t)
+
+(use-package clojure-mode
+  :ensure t
+  :config
+  (require 'flycheck-clj-kondo))
 
 (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
 
