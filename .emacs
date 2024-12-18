@@ -152,7 +152,8 @@ Return a list of installed packages or nil for every skipped package."
 (use-package clojure-mode
   :ensure t
   :config
-  (require 'flycheck-clj-kondo))
+  (require 'flycheck-clj-kondo)
+  (add-hook 'clojure-mode-hook #'flycheck-mode))
 
 (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
 
