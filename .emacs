@@ -32,7 +32,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(num3-face-even ((t (:underline t))))
- '(default ((t (:height 120 :family "Liberation Mono"))))) ; 150
+ '(default ((t (:height 125 :family "Liberation Mono")))))
 
 (server-start)
 (setenv "EDITOR" "emacsclient")
