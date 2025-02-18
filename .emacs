@@ -18,7 +18,7 @@
  '(markdown-command "markdown_py")
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(flycheck-clj-kondo num3-mode underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido fill-column-indicator cider))
+   '(flycheck-clj-kondo num3-mode underwater-theme oer-reveal use-package yaml-mode xcscope smex projectile paredit markdown-mode magit flx-ido cider))
  '(recentf-mode t)
  '(shell-command-with-editor-mode t)
  '(show-paren-mode t)
@@ -84,7 +84,6 @@ Return a list of installed packages or nil for every skipped package."
 (ensure-package-installed
  '(cider
    flycheck-clj-kondo
-   fill-column-indicator
    flx-ido
    magit
    markdown-mode
@@ -135,10 +134,11 @@ Return a list of installed packages or nil for every skipped package."
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
 (setq-default fill-column 78)
-(use-package fill-column-indicator
-  :config
-  ;; (setq fci-rule-column 78)
-  (add-hook 'prog-mode-hook #'fci-mode))
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+;; (use-package fill-column-indicator
+;;   :config
+;;   ;; (setq fci-rule-column 78)
+;;   (add-hook 'prog-mode-hook #'fci-mode))
 
 (use-package cider
   :config
